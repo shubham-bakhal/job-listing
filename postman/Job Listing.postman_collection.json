@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "8105822e-b4d4-4057-bb88-dc8abd0269d1",
+		"name": "Job Listing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13378506"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Shubham\",\n    \"lastName\": \"Bakhal\",\n    \"email\": \"bakhalshubham2@gmail.com\",\n    \"phoneNumber\": \"9860407713\",\n    \"company\": \"ABC\",\n    \"role\": \"Applicants\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user?email=bakhalshubham@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "bakhalshubham@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "User Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user-post/66224b2cc7575c9460c68159",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user-post",
+								"66224b2cc7575c9460c68159"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userID\": \"662250c3b7a658e3d0cc36d2\",\n    \"title\": \"React js developer\",\n    \"description\": \"Job post for xyz\",\n    \"location\": \"Pune, MH, INDIA\",\n    \"deadline\": \"2024-05-05T00:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Interest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user-interest/662250c3b7a658e3d0cc36d2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user-interest",
+								"662250c3b7a658e3d0cc36d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User Interest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"662250c3b7a658e3d0cc36d2\", \n    \"post\": \"66224d03f8c8bb194e74dc44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user-interest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user-interest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post -> archive post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userID\": \"66224b2cc7575c9460c68159\",\n    \"title\": \"React js developer\",\n    \"description\": \"Job post for xyz\",\n    \"location\": \"Pune, MH, INDIA\",\n    \"deadline\": \"2024-05-05T00:00:00Z\",\n    \"archived\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/post/66224d03f8c8bb194e74dc44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"post",
+								"66224d03f8c8bb194e74dc44"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
